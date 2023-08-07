@@ -1,0 +1,23 @@
+{
+    "name": "app",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "devDependencies": {
+        "@iconify-json/tabler": "^1.1.84",
+        "@nuxtjs/i18n": "^8.0.0-beta.13",
+        "nuxt": "^3.6.2",
+        "typescript": "^5.1.6"
+    },
+    "dependencies": {
+        "@pinia/nuxt": "^0.4.11",
+        "@unocss/nuxt": "^0.53.5",
+        "@vueuse/nuxt": "^10.2.1"
+    }
+}
