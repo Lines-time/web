@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
     modules: ["@nuxtjs/i18n", "@pinia/nuxt", "@vueuse/nuxt", "@unocss/nuxt"],
     experimental: {},
+    build: {
+        transpile: ["trpc-nuxt"],
+    },
     css: ["@unocss/reset/tailwind.css"],
     i18n: {
         locales: ["en"],
