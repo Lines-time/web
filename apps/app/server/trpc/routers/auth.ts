@@ -1,6 +1,5 @@
-import { AuthError, convertAuthErrorToTRPCError } from "../../service/error";
+import { convertAuthErrorToTRPCError } from "../../service/error";
 import { publicProcedure, router } from "../trpc";
-import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
 export const authRouter = router({
