@@ -1,4 +1,6 @@
 import { publicProcedure, router } from "../trpc";
+import { authRouter } from "./auth";
+import { userRouter } from "./user";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 
@@ -15,6 +17,8 @@ export const appRouter = router({
                 greeting: `Hello ${input.text ?? "world"}`,
             };
         }),
+    auth: authRouter,
+    user: userRouter,
 });
 
 export type AppRouter = typeof appRouter;

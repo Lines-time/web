@@ -1,0 +1,6 @@
+{
+    "name": "dev-db",
+    "scripts": {
+        "dev": "docker compose up"
+    }
+}

@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     build: {
         transpile: ["trpc-nuxt"],
     },
+    devtools: true,
     css: ["@unocss/reset/tailwind.css"],
     i18n: {
         locales: ["en"],

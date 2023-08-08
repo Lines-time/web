@@ -4,17 +4,23 @@
     "private": true,
     "scripts": {
         "build": "nuxt build",
-        "dev": "nuxt dev",
+        "dev": "nuxt dev --dotenv .dev.env",
         "generate": "nuxt generate",
         "preview": "nuxt preview",
-        "postinstall": "nuxt prepare"
+        "postinstall": "nuxt prepare",
+        "db:migrate": "drizzle-kit generate:pg",
+        "db:studio": "drizzle-kit studio --verbose",
+        "db:push": "drizzle-kit push:pg"
     },
     "devDependencies": {
         "@iconify-json/tabler": "^1.1.84",
-        "@nuxtjs/i18n": "^8.0.0-beta.13",
-        "nuxt": "^3.6.5",
         "@nuxt/devtools": "latest",
+        "@nuxtjs/i18n": "^8.0.0-beta.13",
+        "@types/better-sqlite3": "^7.6.4",
         "@types/node": "^18",
+        "@types/pg": "^8.10.2",
+        "drizzle-kit": "^0.19.12",
+        "nuxt": "^3.6.5",
         "typescript": "^5.1.6"
     },
     "dependencies": {
@@ -23,6 +29,9 @@
         "@trpc/server": "^10.37.1",
         "@unocss/nuxt": "^0.53.5",
         "@vueuse/nuxt": "^10.2.1",
+        "dayjs": "^1.11.9",
+        "drizzle-orm": "^0.28.0",
+        "pg": "^8.11.2",
         "trpc-nuxt": "^0.10.6",
         "zod": "^3.21.4"
     }
