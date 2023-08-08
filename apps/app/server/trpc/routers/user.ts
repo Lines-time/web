@@ -3,9 +3,9 @@ import { z } from "zod";
 
 export const userRouter = router({
     all: publicProcedure.query(({ ctx }) => {
-        return ctx.userService.getAll();
+        return ctx.repository.user.getAll();
     }),
-    byId: publicProcedure.input(z.number()).query(({ ctx, input }) => {
-        return ctx.userService.getById(input);
+    byId: publicProcedure.input(z.string().uuid()).query(({ ctx, input }) => {
+        return ctx.repository.user.getById(input);
     }),
 });

@@ -1,13 +1,27 @@
 import createClient from "../database/client";
-import { UserService } from "../service/userService";
+import { SessionRepository } from "../repository/session";
+import { UserRepository } from "../repository/user";
+import { AuthService } from "../service/auth";
 import { inferAsyncReturnType } from "@trpc/server";
+import { H3Event } from "h3";
 
 const dbClient = createClient();
 
-export async function createContext() {
+export async function createContext(event: H3Event) {
+    const db = await dbClient;
+
+    const userRepository = new UserRepository(db);
+    const sessionRepository = new SessionRepository(db);
     return {
-        db: await dbClient,
-        userService: new UserService(),
+        event,
+        db,
+        repository: {
+            user: userRepository,
+            session: sessionRepository,
+        },
+        service: {
+            auth: new AuthService(userRepository, sessionRepository),
+        },
     };
 }
 
